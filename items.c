@@ -2,8 +2,8 @@
 #include "memcached.h"
 #include "bipbuffer.h"
 #include "slab_automove.h"
-#include "storage.h"
 #ifdef EXTSTORE
+#include "storage.h"
 #include "slab_automove_extstore.h"
 #endif
 #include <sys/stat.h>

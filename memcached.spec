@@ -1,3 +1,4 @@
+%bcond_with arm_crc32
 %bcond_with extstore
 %bcond_with seccomp
 %bcond_with sasl
@@ -27,8 +28,8 @@ BuildRequires: systemd-units
 %endif
 
 Name:           memcached
-Version:        @VERSION@
-Release:        @RELEASE@%{?dist}
+Version:        1.6.7
+Release:        1%{?dist}
 Summary:        High Performance, Distributed Memory Object Cache
 
 Group:          System Environment/Daemons
@@ -65,6 +66,7 @@ web applications by alleviating database load.
 
 %build
 %configure \
+  %{?with_arm_crc32:--enable-arm-crc32} \
   %{?with_extstore:--enable-extstore} \
   %{?with_seccomp:--enable-seccomp} \
   %{?with_sasl:--enable-sasl} \
